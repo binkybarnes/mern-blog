@@ -1,75 +1,21 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Header from "./Header";
+import Post from "./Post";
+import Layout from "./Layout";
+import IndexPage from "./pages/IndexPage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
   return (
-    <main>
-      <header>
-        <a href="" className="logo">
-          MyBlog
-        </a>
-        <nav>
-          <a href="">Login</a>
-          <a href="">Register</a>
-        </nav>
-      </header>
-
-      <div className="post">
-        <div className="image">
-          <img
-            src="https://miro.medium.com/v2/resize:fit:560/format:webp/1*xPjeXkXbzEPfRtZpY5DQAg.png"
-            alt=""
-          />
-        </div>
-
-        <div className="texts">
-          <h2>The Ultimate Github Collaboration Guide</h2>
-          <p className="info">
-            <a className="author">Monke</a>
-            <time>2023-01-06 16:45</time>
-          </p>
-          <p className="summary">
-            This is just one of many ways to collaborate on a project using
-            GitHub.
-          </p>
-        </div>
-      </div>
-
-      <div className="post">
-        <img
-          src="https://miro.medium.com/v2/resize:fit:560/format:webp/1*xPjeXkXbzEPfRtZpY5DQAg.png"
-          alt=""
-        />
-        <div className="texts">
-          <h2>The Ultimate Github Collaboration Guide</h2>
-          <p className="info">
-            <a className="author">Monke</a>
-            <time>2023-01-06 16:45</time>
-          </p>
-          <p className="summary">
-            This is just one of many ways to collaborate on a project using
-            GitHub.
-          </p>
-        </div>
-      </div>
-
-      <div className="post">
-        <img
-          src="https://miro.medium.com/v2/resize:fit:560/format:webp/1*xPjeXkXbzEPfRtZpY5DQAg.png"
-          alt=""
-        />
-        <div className="texts">
-          <h2>The Ultimate Github Collaboration Guide</h2>
-          <p className="info">
-            <a className="author">Monke</a>
-            <time>2023-01-06 16:45</time>
-          </p>
-          <p className="summary">
-            This is just one of many ways to collaborate on a project using
-            GitHub.
-          </p>
-        </div>
-      </div>
-    </main>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<IndexPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Route>
+    </Routes>
   );
 }
 
